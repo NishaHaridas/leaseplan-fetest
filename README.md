@@ -36,14 +36,10 @@ npm run wd-start
 - Follow the guide to install selenoid - https://aerokube.com/selenoid/latest/
 - Now you could use selenoid instead of selenium standalone.
 
-**Run carnext.com tests**
+**Run tests**
 
 ```
-npm run cn-tests
-```
-**To run tests just for one country/page use "--suite" param. For NL it would be:**
-```
-npm run cn-tests -- --suite nl
+npm run test
 ```
 
 ## Framework configuration

@@ -29,7 +29,6 @@
   "scripts": {
     "wd-install": "selenium-standalone install",
     "wd-start": "selenium-standalone start",
-    "validate": "eslint validate ./ ",
     "test": "wdio ./config/test.conf.js"
   },
   "standard": {
