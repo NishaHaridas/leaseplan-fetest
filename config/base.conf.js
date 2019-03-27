@@ -49,6 +49,7 @@ exports.config = {
     //
     browserName: 'chrome',
     chromeOptions: {
+      args: ['start-maximized', 'disable-extensions'],
       prefs: {
         'download.default_directory': path.resolve('reports/downloads'),
       },
