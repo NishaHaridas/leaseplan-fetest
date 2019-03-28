@@ -16,3 +16,5 @@ Then(/^I Click on "([^"]*)" button to give feedback$/,
     feedbackChoice => clientServicePage.clickFeedBackChoice(feedbackChoice));
 
 Then(/^I should see text "([^"]*)"$/, text => clientServicePage.feedbackChoiceResponse(text));
+
+Then(/^I should see options to reach LeasePlan via phone "([^"]*)"$/, contactOption => clientServicePage.VerifyContactOptions(contactOption));

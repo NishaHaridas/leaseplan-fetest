@@ -19,8 +19,9 @@ Feature: Client service page functionalities
     Scenario: To check whether a user is able to get customer service details if answer is not satisfied from FAQ
         When I click topic card "Bestellen en leveren"
         And I select subject "Levering"
-        And I click on question "Waar wordt de auto afgeleverd?"
-        Then I should see answer text "De leverancier van de auto neemt contact op om een afspraak voor aflevering te maken."
+        And I click on question "Ik heb een Tesla Model S of X met 4% bijtelling besteld. Geldt de prijsverlaging ook voor deze auto’s?"
+        Then I should see answer text "Voor alle voorraad Tesla’s Model S en X, met 4% bijtelling, geldt de prijsverlaging niet."
         And I should see title "Tevreden met dit antwoord?" in answer feedback section
         When I Click on "Nee, ik wil contact" button to give feedback
         Then I should see text "Zie onderstaande contactopties"
+        And I should see options to reach LeasePlan via phone "0365270000"

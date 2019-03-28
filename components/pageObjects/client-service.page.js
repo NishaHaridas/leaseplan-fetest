@@ -89,7 +89,7 @@ class ClientServicePage {
     /**
     * Click on feedback choice based on given feedback choice text
     * @param {string} feedbackChoice - feedback choice text
-    * @returns {Promise} resolves if element found and clicks element, otherwise rejects   
+    * @returns {Promise} resolves if element found and clicks element, otherwise rejects
     * @example
     *      ClientServicePage.clickFeedBackChoice('Ja');
     */
@@ -103,13 +103,33 @@ class ClientServicePage {
     /**
     * Verify if answer feedback section contains given text after user input(Yes or No)
     * @param {string} response - user feedback response to answer to question
-    * @returns {Promise} resolves true if element found , otherwise rejects   
+    * @returns {Promise} resolves true if element found , otherwise rejects
     * @example
     *      ClientServicePage.feedbackChoiceResponse('Fijn dat we konden helpen!');
     */
     static feedbackChoiceResponse(response) {
         return new Promise((resolve, reject) => {
             const elem = pageHelper.getSpanElementByText(response);
+            if (elem.isExisting()) {
+                resolve(true);
+            }
+            else {
+                reject("Element does not contain text" + response);
+                return;
+            }
+        });
+    }
+
+    /**
+    * Verify if contact option section contains exist
+    * @param {string} contactOption - contact option (phone number or message)
+    * @returns {Promise} resolves true if element found , otherwise rejects
+    * @example
+    *      ClientServicePage.VerifyContactOptions('0365270000');
+    */
+    static VerifyContactOptions(contactOption) {
+        return new Promise((resolve, reject) => {
+            const elem = pageHelper.getSpanElementByText(contactOption);
             if (elem.isExisting()) {
                 resolve(true);
             }
